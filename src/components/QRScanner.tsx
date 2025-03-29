@@ -101,18 +101,17 @@ const QRScanner: React.FC<QRScannerProps> = ({ busId, routeId, stopId }) => {
             <div className="w-[80%] h-[80%] border-2 border-transit-blue rounded-lg"></div>
             {/* Scanning animation */}
             <div 
-              className="absolute h-1 bg-transit-blue/50 w-[80%] top-1/2"
-              style={{
-                animation: 'scanMove 2s infinite',
-              }}
+              className="absolute h-1 bg-transit-blue/50 w-[80%] top-1/2 animate-[scanMove_2s_infinite]"
             ></div>
-            <style jsx>{`
-              @keyframes scanMove {
-                0% { transform: translateY(-100px); }
-                50% { transform: translateY(100px); }
-                100% { transform: translateY(-100px); }
-              }
-            `}</style>
+            <style>
+              {`
+                @keyframes scanMove {
+                  0% { transform: translateY(-100px); }
+                  50% { transform: translateY(100px); }
+                  100% { transform: translateY(-100px); }
+                }
+              `}
+            </style>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-transit-blue font-medium animate-pulse">
                 Scanner un QR code...
